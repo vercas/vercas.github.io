@@ -15,13 +15,14 @@
 
 html {
 	font-size: 100%;
+	min-height: 100%;
 }
 
 body {
 	background: $bkgrnd;
 	font: 18px/1.4 $helvetica;
 	color: $lightishGray;
-	padding-bottom: 88px;
+	margin-bottom: 88px;
 }
 
 .container {
@@ -282,7 +283,7 @@ nav {
 	margin-top: 50px;
 	background-color: $black;
 	position: absolute;
-	bottom: -88px;
+	bottom: 0;
 	width: 100%;
 	height: 88px;
 }
