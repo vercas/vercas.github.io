@@ -301,6 +301,7 @@ footer {
 
 .pagination {
 	margin: 15px 0;
+	width: 100%;
 }
 
 .pagination > .prev {
@@ -308,7 +309,6 @@ footer {
 }
 
 .pagination > .page-list {
-	display: inline;
 	text-align: center;
 }
 
