@@ -305,7 +305,7 @@ footer {
 }
 
 .pagination > .prev {
-	float: left;
+	text-align: left;
 }
 
 .pagination > .page-list {
@@ -313,7 +313,7 @@ footer {
 }
 
 .pagination > .next {
-	float: right;
+	text-align: right;
 }
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
