@@ -23,7 +23,7 @@ body {
 	background: $bkgrnd;
 	font: 18px/1.4 $helvetica;
 	color: $lightishGray;
-	margin-bottom: 88px;
+	margin-bottom: 128px;
 }
 
 .container {
@@ -308,6 +308,7 @@ footer {
 }
 
 .pagination > .page-list {
+	width: 50%;
 	margin: 0 auto;
 }
 
