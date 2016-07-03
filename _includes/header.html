@@ -8,12 +8,11 @@
 		</div>
 
 		<ul class="nav nav-pills">
-			{% for p in site.pages | where_exp:"p",
-"p.navorder > 0" | sort: 'navorder' %}
+			{% for p in site.navpages %}
 				{% if p.url == page.url %}
 					<li role="presentation" class="active"><a href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a></li>
 				{% else %}
-					<li role="presentation"><a href="{{ site.baseurl }}{{ p.url }}">{{ p.title }} {{ p.navorder }}</a></li>
+					<li role="presentation"><a href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a></li>
 				{% endif %}
 			{% endfor %}
 		</ul>

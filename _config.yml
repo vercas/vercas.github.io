@@ -14,6 +14,14 @@ avatar: https://avatars0.githubusercontent.com/u/1823741
 paginate: 5
 paginate_path: "/page:num/"
 
+navpages:
+  - title: Blog
+    url: /
+  - title: Projects
+    url: /projects/
+  - title: About
+    url: /about/
+
 collections:
   projects:
     output: true
