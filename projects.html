@@ -5,9 +5,23 @@ permalink: /projects/
 ---
 
 <div class="projects">
-    {% for project in site.projects %}
-        <article class="project">
-            <h1><a href="{{ site.baseurl }}{{ project.url }}">{{ project.title }}</a></h1>
-        </article>
-    {% endfor %}
+	{% for project in site.projects %}
+		{% comment %}<article class="project">
+			<h1><a href="{{ site.baseurl }}{{ project.url }}">{{ project.title }}</a></h1>
+		</article>{% endcomment %}
+		<div class="panel panel-default">
+			<div class="panel-heading"><a href="{{ site.baseurl }}{{ project.url }}">{{ project.title }}</a></div>
+			<div class="panel-body">
+				<p>Lorem ipsum dolor sit amet, consectur yada yada yada</p>
+			</div>
+
+			<ul class="list-group">
+			<li class="list-group-item">Cras justo odio</li>
+			<li class="list-group-item">Dapibus ac facilisis in</li>
+			<li class="list-group-item">Morbi leo risus</li>
+			<li class="list-group-item">Porta ac consectetur ac</li>
+			<li class="list-group-item">Vestibulum at eros</li>
+			</ul>
+		</div>
+	{% endfor %}
 </div>
