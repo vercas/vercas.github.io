@@ -27,7 +27,7 @@ html {
 }
 
 body {
-	background: $bkgrnd;
+	background: url("/images/background.png") cover no-repeat fixed center;
 	font: 18px/1.4 $helvetica;
 	color: $lightishGray;
 	margin-bottom: 110px;
