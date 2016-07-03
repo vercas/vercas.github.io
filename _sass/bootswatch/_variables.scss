@@ -711,7 +711,7 @@ $panel-border-radius:         $border-radius-base !default;
 
 //** Border color for elements within panels
 $panel-inner-border:          $gray-dark !default;
-$panel-footer-bg:             lighten($gray-darker, 10%) !default;
+$panel-footer-bg:             #202021 !default;
 
 $panel-default-text:          $text-color !default;
 $panel-default-border:        $panel-inner-border !default;
