@@ -1,8 +1,11 @@
 ---
 layout: default
+title: Blog
 ---
 
+<a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a>
 {% for p in site.pages %}
+	<br />
 	<a href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a>
 {% endfor %}
 
