@@ -27,7 +27,9 @@ html {
 }
 
 body {
-	background: url("/images/background.png") cover no-repeat fixed center;
+	background: url("/images/background.png") no-repeat fixed center;
+	background-size: cover;
+	
 	font: 18px/1.4 $helvetica;
 	color: $lightishGray;
 	margin-bottom: 110px;
