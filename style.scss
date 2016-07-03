@@ -265,7 +265,7 @@ nav {
 
 .post {
 	border-bottom: 1px solid $darkGray;
-	
+
 	blockquote {
 		margin: 1.8em .8em;
 		border-left: 2px solid $gray;
@@ -288,6 +288,7 @@ nav {
 
 .post-date {
 	float: right;
+	margin-top: 7px;
 }
 
 .comments {
