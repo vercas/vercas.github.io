@@ -26,17 +26,29 @@
 	<body>
 		{% include header.html %}
 
+		{% if page.gallery %}
+			<div id="projgallery">
+				{% for image in page.gallery %}
+					<a href="{{ image }}">
+						<img class="thumbnaild" src="{{ image }}" />
+					</a>
+				{% endfor %}
+			</div>
+		{% endif %}
+
 		<div id="main" role="main" class="container">
 			{{ content }}
 		</div>
 
 		{% include footer.html %}
 
-		<script type="text/javascript">
-			$(document).ready(function() {
-				$("#projgallery").lightGallery(); 
-			});
-		</script>
+		{% if page.gallery %}
+			<script type="text/javascript">
+				$(document).ready(function() {
+					$("#projgallery").lightGallery(); 
+				});
+			</script>
+		{% endif %}
 
 		{% include analytics.html %}
 	</body>
