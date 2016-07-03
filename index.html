@@ -4,17 +4,22 @@ layout: default
 
 <div class="posts">
 	{% for post in paginator.posts %}
-		<div class="media post">
-			<div class="media-left">
-				<a href="#">
-					<img class="media-object" src="..." alt="...">
-				</a>
-			</div>
+		<article class="media post">
+			{% if post.image %}
+				<div class="media-left">
+					<a href="#">
+						<img class="media-object" src="post.image" alt="Image of {{ post.title }}">
+					</a>
+				</div>
+			{% endif %}
 			<div class="media-body">
 				<h2 class="media-heading"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h4>
 				{{ post.excerpt }}
 			</div>
-		</div>
+			<div class="media-right">
+				{{ post.date | date: "%B %e, %Y" }}
+			</div>
+		</article>
 
 		{% comment %}
 			<article class="post">
