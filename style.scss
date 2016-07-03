@@ -270,9 +270,9 @@ h4 {
 // .main
 //
 
-.posts > .post {
-	margin-bottom: 30px;
-}
+// .posts > .post {
+// 	margin-bottom: 30px;
+// }
 
 // .posts > .post:last-child {
 //   padding-bottom: 1em;
@@ -280,7 +280,7 @@ h4 {
 // }
 
 .post {
-	border-bottom: 1px solid $darkGray;
+	border-bottom: 1px dotted $darkGray;
 
 	blockquote {
 		margin: 1.8em .8em;
