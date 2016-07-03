@@ -29,7 +29,7 @@ html {
 body {
 	background: url("/images/background.png") no-repeat fixed center;
 	background-size: cover;
-	
+
 	font: 18px/1.4 $helvetica;
 	color: $lightishGray;
 	margin-bottom: 110px;
@@ -168,6 +168,7 @@ h4 {
 
 .wrapper-masthead {
 	margin-bottom: 50px;
+	background-color: rgba(0, 0, 0, 0.5);
 }
 
 .header-border {
