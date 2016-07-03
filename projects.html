@@ -6,23 +6,41 @@ permalink: /projects/
 
 <div class="projects">
 	{% for project in site.projects %}
+		{% assign repo = false %}
+
+		{% if project.repo %}
+			{% for r in site.github.public_repositories %}
+				{% if r.full_name == project.repo %}
+					{% assign repo = r %}
+					{% break %}
+				{% endif %}
+			{% endfor %}
+		{% endif %}
+
 		<div class="panel panel-default">
 			<div class="panel-heading"><a href="{{ site.baseurl }}{{ project.url }}">{{ project.title }}</a></div>
 			<div class="panel-body">
 				<p>{{ project.description }}</p>
 			</div>
 
-			<ul class="list-group">
-			<li class="list-group-item">Cras justo odio</li>
-			<li class="list-group-item">Dapibus ac facilisis in</li>
-			<li class="list-group-item">Morbi leo risus</li>
-			<li class="list-group-item">Porta ac consectetur ac</li>
-			<li class="list-group-item">Vestibulum at eros</li>
-			</ul>
+			{% if repo %}
+				<ul class="list-group">
+					<li class="list-group-item">Cras justo odio</li>
+					<li class="list-group-item">Dapibus ac facilisis in</li>
+					<li class="list-group-item">Morbi leo risus</li>
+					<li class="list-group-item">Porta ac consectetur ac</li>
+					<li class="list-group-item">Vestibulum at eros</li>
+				</ul>
+			{% elsif project.repo %}
+				<ul class="list-group">
+					<li class="list-group-item">It seems that the repository &quot;{{ project.repo }}&quot; does not exist, or is not public.</li>
+				</ul>
+			{% endif %}
 		</div>
 	{% endfor %}
 </div>
 
+{% comment %}
 {% for repo in site.github.public_repositories %}
 	<div class="panel panel-default">
 		<div class="panel-heading"><a href="{{ repo.html_url }}">{{ repo.name }}</a></div>
@@ -31,11 +49,12 @@ permalink: /projects/
 		</div>
 
 		<ul class="list-group">
-		<li class="list-group-item">Last update: {{ repo.updated_at }}</li>
-		<li class="list-group-item">{{ repo.stargazers_count }} stargazer{% if repo.stargazers_count != 1 %}s{% endif %}, {{ repo.watchers_count }} watcher{% if repo.watchers_count != 1 %}s{% endif %}.</li>
-		<li class="list-group-item">Morbi leo risus</li>
-		<li class="list-group-item">Porta ac consectetur ac</li>
-		<li class="list-group-item">Vestibulum at eros</li>
+			<li class="list-group-item">Last update: {{ repo.updated_at }}</li>
+			<li class="list-group-item">{{ repo.stargazers_count }} stargazer{% if repo.stargazers_count != 1 %}s{% endif %}, {{ repo.watchers_count }} watcher{% if repo.watchers_count != 1 %}s{% endif %}.</li>
+			<li class="list-group-item">Morbi leo risus</li>
+			<li class="list-group-item">Porta ac consectetur ac</li>
+			<li class="list-group-item">Vestibulum at eros</li>
 		</ul>
 	</div>
 {% endfor %}
+{% endcomment %}
