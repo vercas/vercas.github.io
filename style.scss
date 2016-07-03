@@ -7,7 +7,14 @@
 
 @import "reset";
 @import "variables";
-// Syntax highlighting @import is at the bottom of this file
+
+@import "highlights";
+@import "svg-icons";
+
+@import "bootswatch/variables";
+@import "bootstrap";
+@import "bootswatch/bootswatch";
+
 
 /**************/
 /* BASE RULES */
@@ -348,12 +355,3 @@ footer {
 	width: 100px;
 	height: 100px;
 }
-
-// Settled on moving the import of syntax highlighting to the bottom of the CSS
-// ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
-@import "highlights";
-@import "svg-icons";
-
-@import "bootswatch/variables";
-@import "bootstrap";
-@import "bootswatch/bootswatch";
