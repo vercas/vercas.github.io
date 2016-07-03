@@ -6,9 +6,6 @@ permalink: /projects/
 
 <div class="projects">
 	{% for project in site.projects %}
-		{% comment %}<article class="project">
-			<h1><a href="{{ site.baseurl }}{{ project.url }}">{{ project.title }}</a></h1>
-		</article>{% endcomment %}
 		<div class="panel panel-default">
 			<div class="panel-heading"><a href="{{ site.baseurl }}{{ project.url }}">{{ project.title }}</a></div>
 			<div class="panel-body">
@@ -25,3 +22,20 @@ permalink: /projects/
 		</div>
 	{% endfor %}
 </div>
+
+{% for repo in site.github.public_repositories %}
+	<div class="panel panel-default">
+		<div class="panel-heading"><a href="{{ repo.html_url }}">{{ repo.name }}</a></div>
+		<div class="panel-body">
+			<p>{{ repo.description }}</p>
+		</div>
+
+		<ul class="list-group">
+		<li class="list-group-item">Cras justo odio</li>
+		<li class="list-group-item">Dapibus ac facilisis in</li>
+		<li class="list-group-item">Morbi leo risus</li>
+		<li class="list-group-item">Porta ac consectetur ac</li>
+		<li class="list-group-item">Vestibulum at eros</li>
+		</ul>
+	</div>
+{% endfor %}
