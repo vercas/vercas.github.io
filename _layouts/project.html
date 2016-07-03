@@ -52,8 +52,10 @@
 			{% if page.gallery %}
 				<div id="project-gallery">
 					{% for image in page.gallery %}
-						<a href="{{ image }}" class="thumbnail">
-							<img class="thumbnaild" src="{{ image }}" />
+						<a href="{{ image }}">
+							<div class="thumbnail">
+								<img class="thumbnaild" src="{{ image }}" />
+							</div>
 						</a>
 					{% endfor %}
 				</div>
