@@ -4,7 +4,7 @@ layout: default
 
 <div class="posts">
 	{% for post in paginator.posts %}
-		<article class="media post">
+		<div class="media post">
 			{% if post.image %}
 				<div class="media-left">
 					<a href="#">
@@ -19,7 +19,7 @@ layout: default
 			<div class="media-right">
 				{{ post.date | date: "%B %e, %Y" }}
 			</div>
-		</article>
+		</div>
 
 		{% comment %}
 			<article class="post">
