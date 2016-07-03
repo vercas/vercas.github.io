@@ -52,7 +52,7 @@
 			{% if page.gallery %}
 				<div id="project-gallery">
 					{% for image in page.gallery %}
-						<a href="{{ image }}">
+						<a href="{{ image }}" class="thumbnail">
 							<img class="thumbnaild" src="{{ image }}" />
 						</a>
 					{% endfor %}
