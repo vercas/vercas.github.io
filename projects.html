@@ -1,7 +1,13 @@
 ---
-layout: page
+layout: default
 title: Projects
 permalink: /projects/
 ---
 
-bla bla blergh
+<div class="projects">
+    {% for project in site.projects %}
+        <article class="project">
+            <h1><a href="{{ site.baseurl }}{{ project.url }}">{{ project.title }}</a></h1>
+        </article>
+    {% endfor %}
+</div>
