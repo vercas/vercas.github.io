@@ -45,7 +45,9 @@
 		{% if page.gallery %}
 			<script type="text/javascript">
 				$(document).ready(function() {
-					$("#projgallery").lightGallery(); 
+					$("#projgallery").lightGallery({
+					    thumbnail:true
+					}); 
 				});
 			</script>
 		{% endif %}
