@@ -26,18 +26,22 @@
 	<body>
 		{% include header.html %}
 
-		{% if page.gallery %}
-			<div id="projgallery">
-				{% for image in page.gallery %}
-					<a href="{{ image }}">
-						<img class="thumbnaild" src="{{ image }}" />
-					</a>
-				{% endfor %}
-			</div>
-		{% endif %}
-
 		<div id="main" role="main" class="container">
-			{{ content }}
+			{% if page.gallery %}
+				<div id="projgallery">
+					{% for image in page.gallery %}
+						<a href="{{ image }}">
+							<img class="thumbnaild" src="{{ image }}" />
+						</a>
+					{% endfor %}
+				</div>
+
+				<div id="main" role="main" class="container-right">
+					{{ content }}
+				</div>
+			{% else %}
+				{{ content }}
+			{% endif %}
 		</div>
 
 		{% include footer.html %}

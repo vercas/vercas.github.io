@@ -324,7 +324,14 @@ footer {
 }
 
 #projgallery {
+	float: left;
 	margin: 50px;
+	max-width: 105px;
+}
+
+.container-right {
+	float: right;
+	max-width: 630px;
 }
 
 .thumbnaild {
