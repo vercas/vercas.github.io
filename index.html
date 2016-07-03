@@ -34,7 +34,7 @@ layout: default
 </div>
 
 {% if paginator.total_pages > 1 %}
-	<nav>
+	<nav id="posts-pagination">
 		<ul class="pagination">
 			{% if paginator.previous_page %}
 				<li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
