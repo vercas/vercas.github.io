@@ -14,7 +14,7 @@ layout: default
 			{% endif %}
 			<div class="media-body">
 				<h2 class="media-heading"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
-				<span class="badge">{{ post.date | date: "%B %e, %Y" }}</span>
+				<span class="badge post-date">{{ post.date | date: "%B %e, %Y" }}</span>
 				{{ post.excerpt }}
 			</div>
 		</div>
