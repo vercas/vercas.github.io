@@ -1,6 +1,7 @@
 ---
 layout: page
 title: About
+navorder: 3
 permalink: /about/
 ---
 
