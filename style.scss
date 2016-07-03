@@ -186,7 +186,6 @@ h4 {
 	width: 76px;
 	height: 76px;
 	margin-right: 15px;
-	max-width: 100%;
 
 	@include mobile {
 		float: none;
@@ -197,6 +196,7 @@ h4 {
 	img {
 		border-radius: 38px;
 		border: 3px solid $gray;
+		max-width: 100%;
 	}
 }
 
