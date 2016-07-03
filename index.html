@@ -2,6 +2,10 @@
 layout: default
 ---
 
+{% for p in site.pages %}
+	<a href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a>
+{% endfor %}
+
 <div class="posts">
 	{% for post in paginator.posts %}
 		<article class="post">
