@@ -256,7 +256,6 @@ nav {
 
 .posts > .post {
 	margin-bottom: 30px;
-	border-bottom: 1px solid $darkGray;
 }
 
 // .posts > .post:last-child {
@@ -265,6 +264,8 @@ nav {
 // }
 
 .post {
+	border-bottom: 1px solid $darkGray;
+	
 	blockquote {
 		margin: 1.8em .8em;
 		border-left: 2px solid $gray;
