@@ -36,7 +36,7 @@ layout: default
 			{% endfor %}
 			
 			{% if paginator.next_page %}
-				<li><a href="#{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}ria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+				<li><a href="#{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
 			{% else %}
 				<li class="disabled"><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
 			{% endif %}
