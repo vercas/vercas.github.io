@@ -15,7 +15,7 @@ layout: default
 				{{ post.excerpt }}
 			</div>
 		</div>
-		
+
 		{% comment %}
 			<article class="post">
 				<h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> <span class="post-date">{{ post.date | date: "%B %e, %Y" }}</span></h1>
@@ -26,7 +26,7 @@ layout: default
 
 				<a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
 			</article>
-		{% comment %}
+		{% endcomment %}
 	{% endfor %}
 </div>
 
