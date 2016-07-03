@@ -4,15 +4,29 @@ layout: default
 
 <div class="posts">
 	{% for post in paginator.posts %}
-		<article class="post">
-			<h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> <span class="post-date">{{ post.date | date: "%B %e, %Y" }}</span></h1>
-
-			<div class="entry">
+		<div class="media">
+			<div class="media-left">
+				<a href="#">
+					<img class="media-object" src="..." alt="...">
+				</a>
+			</div>
+			<div class="media-body">
+				<h3 class="media-heading"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h4>
 				{{ post.excerpt }}
 			</div>
+		</div>
+		
+		{% comment %}
+			<article class="post">
+				<h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> <span class="post-date">{{ post.date | date: "%B %e, %Y" }}</span></h1>
 
-			<a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-		</article>
+				<div class="entry">
+					{{ post.excerpt }}
+				</div>
+
+				<a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+			</article>
+		{% comment %}
 	{% endfor %}
 </div>
 
