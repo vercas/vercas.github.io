@@ -32,7 +32,7 @@ permalink: /projects/
 
 		<ul class="list-group">
 		<li class="list-group-item">Last update: {{ repo.updated_at }}</li>
-		<li class="list-group-item">{{ repo.stargazers_count }} stargazer{% unless repo.stargazers_count == 1 %}s{% endif %}, {{ repo.watchers_count }} watcher{% unless repo.watchers_count == 1 %}s{% endif %}.</li>
+		<li class="list-group-item">{{ repo.stargazers_count }} stargazer{% if repo.stargazers_count != 1 %}s{% endif %}, {{ repo.watchers_count }} watcher{% if repo.watchers_count != 1 %}s{% endif %}.</li>
 		<li class="list-group-item">Morbi leo risus</li>
 		<li class="list-group-item">Porta ac consectetur ac</li>
 		<li class="list-group-item">Vestibulum at eros</li>
