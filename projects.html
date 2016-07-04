@@ -34,10 +34,6 @@ permalink: /projects/
 					</li>
 					<li class="list-group-item"><a href="{{ repo.url }}">{{ repo.url }}</a></li>
 				</ul>
-			{% elsif project.repo %}
-				<ul class="list-group">
-					<li class="list-group-item">It seems that the repository &quot;{{ project.repo }}&quot; does not exist, or is not public.</li>
-				</ul>
 
 				<script>
 var xmlhttp = new XMLHttpRequest();
@@ -55,6 +51,10 @@ xmlhttp.onreadystatechange = function()
 xmlhttp.open("GET", "{{ repo.url }}", true);
 xmlhttp.send();
 				</script>
+			{% elsif project.repo %}
+				<ul class="list-group">
+					<li class="list-group-item">It seems that the repository &quot;{{ project.repo }}&quot; does not exist, or is not public.</li>
+				</ul>
 			{% endif %}
 		</div>
 	{% endfor %}
