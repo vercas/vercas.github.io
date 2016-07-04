@@ -22,9 +22,13 @@
 	<body>
 		{% include header.html %}
 
+		{% unless page.nocontainer %}
 		<div id="main" role="main" class="container">
+		{% endif %}
 			{{ content }}
+		{% unless page.nocontainer %}
 		</div>
+		{% endif %}
 
 		{% include footer.html %}
 
