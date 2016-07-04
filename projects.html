@@ -82,9 +82,9 @@ $(document).ready(function() {
 				var dat = JSON.parse(xmlhttp.responseText);
 
 				if (dat.stargazers_count == 1)
-					$stars.innerText = '1 watcher';
+					$stars.text('1 watcher');
 				else
-					$stars.innerText = dat.stargazers_count + ' watchers';
+					$stars.text(dat.stargazers_count + ' watchers');
 			}
 		};
 
