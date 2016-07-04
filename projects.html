@@ -4,7 +4,7 @@ title: Projects
 permalink: /projects/
 ---
 
-<div class="projects">
+<div id="projects">
 	{% for project in site.projects %}
 		<div class="panel panel-default">
 			<div class="panel-heading"><a href="{{ site.baseurl }}{{ project.url }}">{{ project.title }}</a></div>
@@ -25,26 +25,26 @@ permalink: /projects/
 			{% endif %}
 		</div>
 	{% endfor %}
-</div>
 
-{% for repo in site.github.public_repositories %}
-	<div class="panel panel-default">
-		<div class="panel-heading"><a href="{{ repo.html_url }}">{{ repo.name }}</a></div>
-		<div class="panel-body">
-			<p>{{ repo.description }}</p>
+	{% for repo in site.github.public_repositories %}
+		<div class="panel panel-default">
+			<div class="panel-heading"><a href="{{ repo.html_url }}">{{ repo.name }}</a></div>
+			<div class="panel-body">
+				<p>{{ repo.description }}</p>
+			</div>
+
+			<ul class="list-group" data-repo-name="{{ repo.full_name }}">
+				<li class="list-group-item repo-link-item"><a href="https://github.com/{{ repo.full_name }}">GitHub repository</a></li>
+				<li class="list-group-item">
+					<span class="stars"># stargazers</span>,
+					<span class="watchers"># watchers</span>,
+					<span class="forks"># forks</span>,
+					<span class="issues"># issues</span>.
+				</li>
+			</ul>
 		</div>
-
-		<ul class="list-group" data-repo-name="{{ repo.full_name }}">
-			<li class="list-group-item repo-link-item"><a href="https://github.com/{{ repo.full_name }}">GitHub repository</a></li>
-			<li class="list-group-item">
-				<span class="stars"># stargazers</span>,
-				<span class="watchers"># watchers</span>,
-				<span class="forks"># forks</span>,
-				<span class="issues"># issues</span>.
-			</li>
-		</ul>
-	</div>
-{% endfor %}
+	{% endfor %}
+</div>
 
 <script>
 function countNoun(cnt, nounSing, nounPlur)
@@ -82,5 +82,23 @@ $(document).ready(function() {
 			dataType: "json"
 		});
 	});
+});
+</script>
+
+<script src="/scripts/macy.min.js"></script>
+
+<script>
+Macy.init({
+	container: '#posts',
+	trueOrder: false,
+	waitForImages: false,
+	margin: 24,
+	columns: 5,
+	breakAt: {
+		2850: 4,
+		2150: 3,
+		1350: 2,
+		650: 1
+	}
 });
 </script>
