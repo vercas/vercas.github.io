@@ -25,8 +25,9 @@ permalink: /projects/
 
 			{% if repo %}
 				<ul class="list-group">
-					<li class="list-group-item"><span class="badge">Last update: {{ repo.updated_at }}</span><a href="{{ repo.html_url }}">GitHub repository</a></li>
-			<li class="list-group-item">{{ repo.stargazers_count }} stargazer{% if repo.stargazers_count != 1 %}s{% endif %}, {{ repo.watchers_count }} watcher{% if repo.watchers_count != 1 %}s{% endif %}, {{ repo.forks_count }} fork{% if repo.forks_count != 1 %}s{% endif %}, {{ repo.open_issues_count }} issue{% if repo.open_issues_count != 1 %}s{% endif %}.</li>
+					<li class="list-group-item"><a href="{{ repo.html_url }}">GitHub repository</a><span class="badge">Last update: {{ repo.updated_at }}</span></li>
+					<li class="list-group-item">{{ repo.stargazers_count }} stargazer{% if repo.stargazers_count != 1 %}s{% endif %}, {{ repo.watchers_count }} watcher{% if repo.watchers_count != 1 %}s{% endif %}, {{ repo.forks_count }} fork{% if repo.forks_count != 1 %}s{% endif %}, {{ repo.open_issues_count }} issue{% if repo.open_issues_count != 1 %}s{% endif %}.</li>
+					<li class="list-group-item"><a href="{{ repo.url }}">{{ repo.url }}</a></li>
 				</ul>
 			{% elsif project.repo %}
 				<ul class="list-group">
