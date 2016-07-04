@@ -70,7 +70,7 @@ $(document).ready(function() {
 		var $issues = $el.find(".issues")
 
 		$.ajax({
-			url: "https://api.github.com/repos/" + name,
+			url: "https://github-api.vercas.com:2096/repos/" + name,
 			success: function(dat)
 			{
 				$repoLinkItem.append('<span class="badge last-update">Last update: ' + dat.updated_at + '</span>');
