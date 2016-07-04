@@ -19,7 +19,7 @@ permalink: /projects/
 						<span class="stars"># stargazers</span>,
 						<span class="watchers"># watchers</span>,
 						<span class="forks"># forks</span>,
-						<span class="issues"># issue{s</span>.
+						<span class="issues"># issues</span>.
 					</li>
 				</ul>
 			{% endif %}
@@ -75,9 +75,9 @@ $(document).ready(function() {
 				$repoLinkItem.append('<span class="badge last-update">Last update: ' + dat.updated_at + '</span>');
 
 				$stars.text(countNoun(dat.stargazers_count, 'stargazer'));
-				$stars.text(countNoun(dat.watchers_count,   'watcher'));
-				$stars.text(countNoun(dat.forks_count, 'fork'));
-				$stars.text(countNoun(dat.open_issues_count, 'issue'));
+				$watchers.text(countNoun(dat.watchers_count, 'watcher'));
+				$forks.text(countNoun(dat.forks_count, 'fork'));
+				$issues.text(countNoun(dat.open_issues_count, 'issue'));
 			},
 			dataType: "json"
 		});
