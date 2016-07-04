@@ -26,13 +26,35 @@ permalink: /projects/
 			{% if repo %}
 				<ul class="list-group">
 					<li class="list-group-item"><a href="{{ repo.html_url }}">GitHub repository</a><span class="badge">Last update: {{ repo.updated_at }}</span></li>
-					<li class="list-group-item">{{ repo.stargazers_count }} stargazer{% if repo.stargazers_count != 1 %}s{% endif %}, {{ repo.watchers_count }} watcher{% if repo.watchers_count != 1 %}s{% endif %}, {{ repo.forks_count }} fork{% if repo.forks_count != 1 %}s{% endif %}, {{ repo.open_issues_count }} issue{% if repo.open_issues_count != 1 %}s{% endif %}.</li>
+					<li class="list-group-item">
+						<span id="stars-{{ repo.id }}">{{ repo.stargazers_count }} stargazer{% if repo.stargazers_count != 1 %}s{% endif %}</span>,
+						<span id="watchers-{{ repo.id }}">{{ repo.watchers_count }} watcher{% if repo.watchers_count != 1 %}s{% endif %}</span>,
+						<span id="forks-{{ repo.id }}">{{ repo.forks_count }} fork{% if repo.forks_count != 1 %}s{% endif %}</span>,
+						<span id="issues-{{ repo.id }}">{{ repo.open_issues_count }} issue{% if repo.open_issues_count != 1 %}s{% endif %}</span>.
+					</li>
 					<li class="list-group-item"><a href="{{ repo.url }}">{{ repo.url }}</a></li>
 				</ul>
 			{% elsif project.repo %}
 				<ul class="list-group">
 					<li class="list-group-item">It seems that the repository &quot;{{ project.repo }}&quot; does not exist, or is not public.</li>
 				</ul>
+
+				<script>
+var xmlhttp = new XMLHttpRequest();
+
+xmlhttp.onreadystatechange = function()
+{
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+    {
+        var dat = JSON.parse(xmlhttp.responseText);
+
+        document.getElementById("stars-{{ repo.id }}").innerHTML = '<span class="glyphicon glyphicon-search" aria-hidden="true"></span> ' + dat.stargazers_count;
+    }
+};
+
+xmlhttp.open("GET", "{{ repo.url }}", true);
+xmlhttp.send();
+				</script>
 			{% endif %}
 		</div>
 	{% endfor %}
