@@ -24,33 +24,16 @@ permalink: /projects/
 			</div>
 
 			{% if repo %}
-				<ul class="list-group">
+				<ul class="list-group" data-repo-name="{{ repo.full_name }}">
 					<li class="list-group-item"><a href="{{ repo.html_url }}">GitHub repository</a><span class="badge">Last update: {{ repo.updated_at }}</span></li>
 					<li class="list-group-item">
-						<span id="stars-{{ repo.id }}">{{ repo.stargazers_count }} stargazer{% if repo.stargazers_count != 1 %}s{% endif %}</span>,
-						<span id="watchers-{{ repo.id }}">{{ repo.watchers_count }} watcher{% if repo.watchers_count != 1 %}s{% endif %}</span>,
-						<span id="forks-{{ repo.id }}">{{ repo.forks_count }} fork{% if repo.forks_count != 1 %}s{% endif %}</span>,
-						<span id="issues-{{ repo.id }}">{{ repo.open_issues_count }} issue{% if repo.open_issues_count != 1 %}s{% endif %}</span>.
+						<span class="stars">{{ repo.stargazers_count }} stargazer{% if repo.stargazers_count != 1 %}s{% endif %}</span>,
+						<span class="watchers">{{ repo.watchers_count }} watcher{% if repo.watchers_count != 1 %}s{% endif %}</span>,
+						<span class="forks">{{ repo.forks_count }} fork{% if repo.forks_count != 1 %}s{% endif %}</span>,
+						<span class="issues">{{ repo.open_issues_count }} issue{% if repo.open_issues_count != 1 %}s{% endif %}</span>.
 					</li>
 					<li class="list-group-item"><a href="{{ repo.url }}">{{ repo.url }}</a></li>
 				</ul>
-
-				<script>
-var xmlhttp = new XMLHttpRequest();
-
-xmlhttp.onreadystatechange = function()
-{
-    if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
-    {
-        var dat = JSON.parse(xmlhttp.responseText);
-
-        document.getElementById("stars-{{ repo.id }}").innerHTML = '<span class="glyphicon glyphicon-search" aria-hidden="true"></span> ' + dat.stargazers_count;
-    }
-};
-
-xmlhttp.open("GET", "{{ repo.url }}", true);
-xmlhttp.send();
-				</script>
 			{% elsif project.repo %}
 				<ul class="list-group">
 					<li class="list-group-item">It seems that the repository &quot;{{ project.repo }}&quot; does not exist, or is not public.</li>
@@ -78,3 +61,35 @@ xmlhttp.send();
 	</div>
 {% endfor %}
 {% endcomment %}
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$("[data-repo-name]").each(() => {
+		var $el = $(this)
+		var name = $el.data("repoName")
+
+		var $stars = $el.find(".stars")
+		var $watchers = $el.find(".watchers")
+		var $forks = $el.find(".forks")
+		var $issues = $el.find(".issues")
+
+		var xmlhttp = new XMLHttpRequest();
+
+		xmlhttp.onreadystatechange = function()
+		{
+			if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+			{
+				var dat = JSON.parse(xmlhttp.responseText);
+
+				if (dat.stargazers_count == 1)
+					$stars.innerText = '1 watcher';
+				else
+					$stars.innerText = dat.stargazers_count + ' watchers';
+			}
+		};
+
+		xmlhttp.open("GET", "https://api.github.com/repos/" + name, true);
+		xmlhttp.send();
+	});
+});
+</script>
