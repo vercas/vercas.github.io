@@ -27,7 +27,6 @@ permalink: /projects/
 	{% endfor %}
 </div>
 
-{% comment %}
 {% for repo in site.github.public_repositories %}
 	<div class="panel panel-default">
 		<div class="panel-heading"><a href="{{ repo.html_url }}">{{ repo.name }}</a></div>
@@ -35,16 +34,17 @@ permalink: /projects/
 			<p>{{ repo.description }}</p>
 		</div>
 
-		<ul class="list-group">
-			<li class="list-group-item">Last update: {{ repo.updated_at }}</li>
-			<li class="list-group-item">{{ repo.stargazers_count }} stargazer{% if repo.stargazers_count != 1 %}s{% endif %}, {{ repo.watchers_count }} watcher{% if repo.watchers_count != 1 %}s{% endif %}.</li>
-			<li class="list-group-item">Morbi leo risus</li>
-			<li class="list-group-item">Porta ac consectetur ac</li>
-			<li class="list-group-item">Vestibulum at eros</li>
+		<ul class="list-group" data-repo-name="{{ repo.full_name }}">
+			<li class="list-group-item repo-link-item"><a href="https://github.com/{{ repo.full_name }}">GitHub repository</a></li>
+			<li class="list-group-item">
+				<span class="stars"># stargazers</span>,
+				<span class="watchers"># watchers</span>,
+				<span class="forks"># forks</span>,
+				<span class="issues"># issues</span>.
+			</li>
 		</ul>
 	</div>
 {% endfor %}
-{% endcomment %}
 
 <script>
 function countNoun(cnt, nounSing, nounPlur)
