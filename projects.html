@@ -6,37 +6,21 @@ permalink: /projects/
 
 <div class="projects">
 	{% for project in site.projects %}
-		{% assign repo = false %}
-
-		{% if project.repo %}
-			{% for r in site.github.public_repositories %}
-				{% if r.full_name == project.repo %}
-					{% assign repo = r %}
-					{% break %}
-				{% endif %}
-			{% endfor %}
-		{% endif %}
-
 		<div class="panel panel-default">
 			<div class="panel-heading"><a href="{{ site.baseurl }}{{ project.url }}">{{ project.title }}</a></div>
 			<div class="panel-body">
 				<p>{{ project.description }}</p>
 			</div>
 
-			{% if repo %}
-				<ul class="list-group" data-repo-name="{{ repo.full_name }}">
-					<li class="list-group-item"><a href="{{ repo.html_url }}">GitHub repository</a><span class="badge">Last update: {{ repo.updated_at }}</span></li>
+			{% if project.repo %}
+				<ul class="list-group" data-repo-name="{{ project.repo }}">
+					<li class="list-group-item repo-link-item"><a href="https://github.com/{{ project.repo }}">GitHub repository</a></li>
 					<li class="list-group-item">
-						<span class="stars">{{ repo.stargazers_count }} stargazer{% if repo.stargazers_count != 1 %}s{% endif %}</span>,
-						<span class="watchers">{{ repo.watchers_count }} watcher{% if repo.watchers_count != 1 %}s{% endif %}</span>,
-						<span class="forks">{{ repo.forks_count }} fork{% if repo.forks_count != 1 %}s{% endif %}</span>,
-						<span class="issues">{{ repo.open_issues_count }} issue{% if repo.open_issues_count != 1 %}s{% endif %}</span>.
+						<span class="stars"># stargazers</span>,
+						<span class="watchers"># watchers</span>,
+						<span class="forks"># forks</span>,
+						<span class="issues"># issue{s</span>.
 					</li>
-					<li class="list-group-item"><a href="{{ repo.url }}">{{ repo.url }}</a></li>
-				</ul>
-			{% elsif project.repo %}
-				<ul class="list-group">
-					<li class="list-group-item">It seems that the repository &quot;{{ project.repo }}&quot; does not exist, or is not public.</li>
 				</ul>
 			{% endif %}
 		</div>
@@ -63,33 +47,40 @@ permalink: /projects/
 {% endcomment %}
 
 <script>
+function countNoun(cnt, nounSing, nounPlur)
+{
+	if (cnt == 1)
+		return "1 " + nounSing;
+	else if (nounPlur)
+		return cnt + " " + nounPlur;
+	else
+		return cnt + " " + nounSing + "s"
+}
+
 $(document).ready(function() {
 	$("[data-repo-name]").each(function() {
 		var $el = $(this)
 		var name = $el.data("repoName")
 
+		var $repoLinkItem = $el.find(".repo-link-item")
 		var $stars = $el.find(".stars")
 		var $watchers = $el.find(".watchers")
 		var $forks = $el.find(".forks")
 		var $issues = $el.find(".issues")
 
-		var xmlhttp = new XMLHttpRequest();
-
-		xmlhttp.onreadystatechange = function()
-		{
-			if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+		$.ajax({
+			url: "https://api.github.com/repos/" + name,
+			success: function(dat)
 			{
-				var dat = JSON.parse(xmlhttp.responseText);
+				$repoLinkItem.append('<span class="badge last-update">Last update: ' + dat.updated_at + '</span>');
 
-				if (dat.stargazers_count == 1)
-					$stars.text('1 watcher');
-				else
-					$stars.text(dat.stargazers_count + ' watchers');
-			}
-		};
-
-		xmlhttp.open("GET", "https://api.github.com/repos/" + name, true);
-		xmlhttp.send();
+				$stars.text(countNoun(dat.stargazers_count, 'stargazer'));
+				$stars.text(countNoun(dat.watchers_count,   'watcher'));
+				$stars.text(countNoun(dat.forks_count, 'fork'));
+				$stars.text(countNoun(dat.open_issues_count, 'issue'));
+			},
+			dataType: "json"
+		});
 	});
 });
 </script>
