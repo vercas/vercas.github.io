@@ -74,7 +74,7 @@ $(document).ready(function() {
 			url: "https://github-api.vercas.com/repos/" + name,
 			success: function(dat)
 			{
-				$repoLinkItem.append('<span class="badge last-update">Last update: ' + dat.updated_at + '</span>');
+				$repoLinkItem.append('<span class="badge last-update">Last update: ' + new Date(dat.updated_at) + '</span>');
 
 				$stars.text(countNoun(dat.stargazers_count, 'stargazer'));
 				$watchers.text(countNoun(dat.watchers_count, 'watcher'));
