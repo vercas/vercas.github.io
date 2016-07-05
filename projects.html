@@ -55,19 +55,19 @@ function countNoun(cnt, nounSing, nounPlur)
 	else if (nounPlur)
 		return cnt + " " + nounPlur;
 	else
-		return cnt + " " + nounSing + "s"
+		return cnt + " " + nounSing + "s";
 }
 
 $(document).ready(function() {
 	$("[data-repo-name]").each(function() {
-		var $el = $(this)
-		var name = $el.data("repoName")
+		var $el = $(this);
+		var name = $el.data("repoName");
 
-		var $repoLinkItem = $el.find(".repo-link-item")
-		var $stars = $el.find(".stars")
-		var $watchers = $el.find(".watchers")
-		var $forks = $el.find(".forks")
-		var $issues = $el.find(".issues")
+		var $repoLinkItem = $el.find(".repo-link-item");
+		var $stars = $el.find(".stars");
+		var $watchers = $el.find(".watchers");
+		var $forks = $el.find(".forks");
+		var $issues = $el.find(".issues");
 
 		$.ajax({
 			url: "https://github-api.vercas.com/repos/" + name,
