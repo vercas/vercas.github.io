@@ -15,18 +15,29 @@ permalink: /projects/
 
 			{% if project.repo %}
 				<ul class="list-group" data-repo-name="{{ project.repo }}">
-					<li class="list-group-item repo-link-item"><a href="https://github.com/{{ project.repo }}">GitHub repository</a></li>
+					<li class="list-group-item repo-link-item">
+						<a href="https://github.com/{{ project.repo }}">GitHub repository</a>
+					</li>
 					<li class="list-group-item">
 						<span class="stars"># stargazers</span>,
 						<span class="watchers"># watchers</span>,
 						<span class="forks"># forks</span>,
 						<span class="issues"># issues</span>.
 					</li>
+					{% if project.travis_branch %}
+						<li class="list-group-item">
+							<a href="https://travis-ci.com/{{ project.repo }}">
+								<img src="https://travis-ci.org/{{ project.repo }}.svg?branch={{ project.travis_branch }}"
+									alt="Travis build status of {{ project.title }}">
+							</a>
+						</li>
+					{% endif %}
 				</ul>
 			{% endif %}
 		</div>
 	{% endfor %}
 
+	{% comment %}
 	{% for repo in site.github.public_repositories %}
 		<div class="panel panel-default">
 			<div class="panel-heading"><a href="{{ repo.html_url }}">{{ repo.name }}</a></div>
@@ -45,6 +56,7 @@ permalink: /projects/
 			</ul>
 		</div>
 	{% endfor %}
+	{% endcomment %}
 </div>
 
 <script>
