@@ -27,7 +27,7 @@ permalink: /projects/
 					{% if project.travis_branch %}
 						<li class="list-group-item">
 							<a href="https://travis-ci.com/{{ project.repo }}">
-								<img src="/images/build-getting-info.svg"
+								<img src="https://travis-ci.org/{{ project.repo }}.svg?branch={{ project.travis_branch }}"
 									alt="Travis build status of {{ project.title }}"
 									crossorigin="anonymous">
 							</a>
