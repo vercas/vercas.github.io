@@ -351,10 +351,10 @@ footer {
 
 .travis-badge {
 	float: right;
+}
 
-	img {
-		margin: auto 0;
-	}
+.travis-badge > img {
+	margin: auto 0;
 }
 
 #project-title {
