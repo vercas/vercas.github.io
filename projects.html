@@ -23,15 +23,13 @@ permalink: /projects/
 						<span class="watchers"># watchers</span>,
 						<span class="forks"># forks</span>,
 						<span class="issues"># issues</span>.
-					</li>
-					{% if project.travis_branch %}
-						<li class="list-group-item">
-							<a href="https://travis-ci.com/{{ project.repo }}">
+						% if project.travis_branch %}
+							<a class="travis-badge" href="https://travis-ci.com/{{ project.repo }}">
 								<img src="https://travis-ci.org/{{ project.repo }}.svg?branch={{ project.travis_branch }}"
 									alt="Travis build status of {{ project.title }}">
 							</a>
-						</li>
-					{% endif %}
+						{% endif %}
+					</li>
 				</ul>
 			{% endif %}
 		</div>
