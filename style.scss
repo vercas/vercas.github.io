@@ -349,12 +349,12 @@ footer {
 	margin: 0 20px;
 }
 
-.travis-badge {
+a.travis-badge {
 	float: right;
 }
 
-.travis-badge > img {
-	margin: auto 0;
+img.travis-badge {
+	margin: auto;
 }
 
 #project-title {
