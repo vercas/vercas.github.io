@@ -23,14 +23,26 @@ permalink: /projects/
 						<span class="watchers"># watchers</span>,
 						<span class="forks"># forks</span>,
 						<span class="issues"># issues</span>.
-						{% if project.travis_branch %}
-							<a class="travis-badge" href="https://travis-ci.com/{{ project.repo }}">
-								<img class="travis-badge"
-									src="https://travis-ci.org/{{ project.repo }}.svg?branch={{ project.travis_branch }}"
-									alt="Travis build status of {{ project.title }}">
-							</a>
-						{% endif %}
 					</li>
+					{% if project.travis_branch or project.nuget %}
+						<li class="list-group-item project-badges">
+							{% if project.travis_branch %}
+								<a class="travis-badge" href="https://travis-ci.com/{{ project.repo }}">
+									<img class="travis-badge"
+										src="https://travis-ci.org/{{ project.repo }}.svg?branch={{ project.travis_branch }}"
+										alt="Travis build status of {{ project.title }}">
+								</a>
+							{% endif %}
+
+							{% if project.nuget %}
+								<a class="nuget-badge" href="https://www.nuget.org/packages/{{ project.nuget }}/">
+									<img class="nuget-badge"
+										src="https://img.shields.io/nuget/v/{{ project.nuget }}.svg"
+										alt="Latest NuGet package of {{ project.title }}">
+								</a>
+							{% endif %}
+						</li>
+					{% endif %}
 				</ul>
 			{% endif %}
 		</div>
