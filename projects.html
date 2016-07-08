@@ -13,50 +13,7 @@ permalink: /projects/
 				<p>{{ project.description }}</p>
 			</div>
 
-			{% if project.repo %}
-				<ul class="list-group" data-repo-name="{{ project.repo }}">
-					<li class="list-group-item repo-link-item">
-						<a href="https://github.com/{{ project.repo }}">GitHub repository</a>
-					</li>
-					<li class="list-group-item">
-						<span class="stars"># stargazers</span>,
-						<span class="watchers"># watchers</span>,
-						<span class="forks"># forks</span>,
-						<span class="issues"># issues</span>.
-					</li>
-					<li class="list-group-item project-badges">
-						<a class="release-badge" href="https://github.com/{{ project.repo }}/releases/latest">
-							<img class="release-badge"
-								src="https://img.shields.io/github/release/{{ project.repo }}.svg"
-								alt="Latest release of {{ project.title }}">
-						</a>
-
-						{% if project.license %}
-							<a class="license-badge" href="https://tldrlegal.com/search?q={{ project.license }}">
-								<img class="license-badge"
-									src="/images/license-{{ project.license }}.svg"
-									alt="License of {{ project.title }}">
-							</a>
-						{% endif %}
-
-						{% if project.travis_branch %}
-							<a class="travis-badge" href="https://travis-ci.com/{{ project.repo }}">
-								<img class="travis-badge"
-									src="https://travis-ci.org/{{ project.repo }}.svg?branch={{ project.travis_branch }}"
-									alt="Travis build status of {{ project.title }}">
-							</a>
-						{% endif %}
-
-						{% if project.nuget %}
-							<a class="nuget-badge" href="https://www.nuget.org/packages/{{ project.nuget }}/">
-								<img class="nuget-badge"
-									src="https://img.shields.io/nuget/v/{{ project.nuget }}.svg"
-									alt="Latest NuGet package of {{ project.title }}">
-							</a>
-						{% endif %}
-					</li>
-				</ul>
-			{% endif %}
+			{% include project_extras.html %}
 		</div>
 	{% endfor %}
 
