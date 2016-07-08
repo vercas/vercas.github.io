@@ -1,7 +1,9 @@
-{% if project.repo %}
-<ul class="list-group" data-repo-name="{{ project.repo }}">
+{% assign proj = include.project %}
+
+{% if proj.repo %}
+<ul class="list-group" data-repo-name="{{ proj.repo }}">
     <li class="list-group-item repo-link-item">
-        <a href="https://github.com/{{ project.repo }}">GitHub repository</a>
+        <a href="https://github.com/{{ proj.repo }}">GitHub repository</a>
     </li>
     <li class="list-group-item">
         <span class="stars"># stargazers</span>,
@@ -9,34 +11,34 @@
         <span class="forks"># forks</span>,
         <span class="issues"># issues</span>.
     </li>
-    <li class="list-group-item project-badges">
-        <a class="release-badge" href="https://github.com/{{ project.repo }}/releases/latest">
+    <li class="list-group-item proj-badges">
+        <a class="release-badge" href="https://github.com/{{ proj.repo }}/releases/latest">
             <img class="release-badge"
-                src="https://img.shields.io/github/release/{{ project.repo }}.svg"
-                alt="Latest release of {{ project.title }}">
+                src="https://img.shields.io/github/release/{{ proj.repo }}.svg"
+                alt="Latest release of {{ proj.title }}">
         </a>
 
-        {% if project.license %}
-            <a class="license-badge" href="https://tldrlegal.com/search?q={{ project.license }}">
+        {% if proj.license %}
+            <a class="license-badge" href="https://tldrlegal.com/search?q={{ proj.license }}">
                 <img class="license-badge"
-                    src="/images/license-{{ project.license }}.svg"
-                    alt="License of {{ project.title }}">
+                    src="/images/license-{{ proj.license }}.svg"
+                    alt="License of {{ proj.title }}">
             </a>
         {% endif %}
 
-        {% if project.travis_branch %}
-            <a class="travis-badge" href="https://travis-ci.com/{{ project.repo }}">
+        {% if proj.travis_branch %}
+            <a class="travis-badge" href="https://travis-ci.com/{{ proj.repo }}">
                 <img class="travis-badge"
-                    src="https://travis-ci.org/{{ project.repo }}.svg?branch={{ project.travis_branch }}"
-                    alt="Travis build status of {{ project.title }}">
+                    src="https://travis-ci.org/{{ proj.repo }}.svg?branch={{ proj.travis_branch }}"
+                    alt="Travis build status of {{ proj.title }}">
             </a>
         {% endif %}
 
-        {% if project.nuget %}
-            <a class="nuget-badge" href="https://www.nuget.org/packages/{{ project.nuget }}/">
+        {% if proj.nuget %}
+            <a class="nuget-badge" href="https://www.nuget.org/packages/{{ proj.nuget }}/">
                 <img class="nuget-badge"
-                    src="https://img.shields.io/nuget/v/{{ project.nuget }}.svg"
-                    alt="Latest NuGet package of {{ project.title }}">
+                    src="https://img.shields.io/nuget/v/{{ proj.nuget }}.svg"
+                    alt="Latest NuGet package of {{ proj.title }}">
             </a>
         {% endif %}
     </li>
