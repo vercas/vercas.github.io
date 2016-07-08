@@ -59,10 +59,10 @@
 				</div>
 			{% endif %}
 
-			{% assign project = page %}
-			{% include project_extras.html %}
-
 			<div id="main" role="main" class="container">
+				{% assign project = page %}
+				{% include project_extras.html %}
+
 				{{ content }}
 			</div>
 		</article>
