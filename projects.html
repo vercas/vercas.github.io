@@ -31,6 +31,12 @@ permalink: /projects/
 								alt="Latest release of {{ project.title }}">
 						</a>
 
+						<a class="release-badge" href="https://github.com/{{ project.repo }}/releases/latest">
+							<img class="release-badge"
+								src="https://img.shields.io/github/license/{{ project.repo }}.svg"
+								alt="Latest release of {{ project.title }}">
+						</a>
+
 						{% if project.travis_branch %}
 							<a class="travis-badge" href="https://travis-ci.com/{{ project.repo }}">
 								<img class="travis-badge"
