@@ -352,6 +352,11 @@ footer {
 .project-badges > a {
 	margin-bottom: 3px;
 	margin-right: 7px;
+	text-decoration: none;
+}
+
+.project-badges > a:hover {
+	text-decoration: none;
 }
 
 #project-title {
