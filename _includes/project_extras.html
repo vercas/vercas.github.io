@@ -27,7 +27,7 @@
         {% endif %}
 
         {% if proj.travis_branch %}
-            <a class="travis-badge" href="https://travis-ci.com/{{ proj.repo }}">
+            <a class="travis-badge" href="https://travis-ci.org/{{ proj.repo }}">
                 <img class="travis-badge"
                     src="https://travis-ci.org/{{ proj.repo }}.svg?branch={{ proj.travis_branch }}"
                     alt="Travis build status of {{ proj.title }}">
