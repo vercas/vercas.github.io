@@ -14,7 +14,7 @@
     <li class="list-group-item project-badges">
         <a class="release-badge" href="https://github.com/{{ proj.repo }}/releases/latest">
             <img class="release-badge"
-                src="https://img.shields.io/github/release/{{ proj.repo }}.svg"
+                src="https://shields.vercas.com/github/release/{{ proj.repo }}.svg"
                 alt="Latest release of {{ proj.title }}">
         </a>
 
@@ -29,7 +29,7 @@
         {% if proj.travis_branch %}
             <a class="travis-badge" href="https://travis-ci.org/{{ proj.repo }}">
                 <img class="travis-badge"
-                    src="https://travis-ci.org/{{ proj.repo }}.svg?branch={{ proj.travis_branch }}"
+                    src="https://shields.vercas.com/travis/{{ proj.repo }}/{{ proj.travis_branch }}.svg"
                     alt="Travis build status of {{ proj.title }}">
             </a>
         {% endif %}
@@ -37,7 +37,7 @@
         {% if proj.nuget %}
             <a class="nuget-badge" href="https://www.nuget.org/packages/{{ proj.nuget }}/">
                 <img class="nuget-badge"
-                    src="https://img.shields.io/nuget/v/{{ proj.nuget }}.svg"
+                    src="https://shields.vercas.com/nuget/v/{{ proj.nuget }}.svg"
                     alt="Latest NuGet package of {{ proj.title }}">
             </a>
         {% endif %}
