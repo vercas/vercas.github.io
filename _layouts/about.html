@@ -1,13 +1,39 @@
----
-layout: default
-headers:
- - <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer crossorigin="anonymous"></script>
----
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }}</title>
 
-<article class="page">
-    <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="horizontal" data-theme="dark" data-vanity="vercas"><a class="LI-simple-link" href='https://uk.linkedin.com/in/vercas?trk=profile-badge'>Alexandru-Mihai Maftei</a></div>
+        {% include meta.html %}
 
-    <div class="entry">
-        {{ content }}
-    </div>
-</article>
+        <!--[if lt IE 9]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
+        <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+
+        <script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+        <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        {% include header.html %}
+
+        <div id="main" role="main" class="container">
+            <article class="page">
+                <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="horizontal" data-theme="dark" data-vanity="vercas"><a class="LI-simple-link" href='https://uk.linkedin.com/in/vercas?trk=profile-badge'>Alexandru-Mihai Maftei</a></div>
+
+                <div class="entry">
+                    {{ content }}
+                </div>
+            </article>
+        </div>
+
+        {% include footer.html %}
+
+        {% include analytics.html %}
+    </body>
+</html>
