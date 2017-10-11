@@ -1,7 +1,7 @@
 {% assign proj = include.project %}
 
 {% if proj.repo %}
-<ul class="list-group" data-repo-name="{{ proj.repo }}">
+<ul class="list-group list-group-flush" data-repo-name="{{ proj.repo }}">
     <li class="list-group-item repo-link-item">
         <a href="https://github.com/{{ proj.repo }}">GitHub repository</a>
     </li>
