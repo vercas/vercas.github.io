@@ -319,8 +319,12 @@ h4 {
     color: #ddd;
 }
 
+.page-item.active .page-link {
+    border-color: #555;
+}
+
 .page-item.disabled .page-link {
-    color: #555;
+    color: #666;
 }
 
 .comments {
