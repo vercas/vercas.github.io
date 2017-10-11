@@ -310,10 +310,6 @@ h4 {
     margin-bottom: 1em;
 }
 
-.page-link:hover {
-    background-color: #444;
-}
-
 .page-link, .page-item.disabled .page-link {
     background-color: #222;
     border-color: #555;
@@ -328,6 +324,12 @@ h4 {
 }
 
 .page-item.disabled .page-link {
+    color: #666;
+}
+
+.page-link:hover {
+    background-color: #444;
+    border-color: #555;
     color: #666;
 }
 
