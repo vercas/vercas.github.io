@@ -9,11 +9,17 @@
 
 		<ul class="nav nav-pills">
 			{% for p in site.navpages %}
-				{% if p.url == page.url %}
-					<li role="presentation" class="active"><a href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a></li>
-				{% else %}
-					<li role="presentation"><a href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a></li>
-				{% endif %}
+				<li role="presentation" class="nav-item">
+					<a href="{{ site.baseurl }}{{ p.url }}"
+						{% if p.url == page.url %}
+							class="nav-link active"
+						{% else %}
+							class="nav-link"
+						{% endif %}
+					>
+						{{ p.title }}
+					</a>
+				</li>
 			{% endfor %}
 		</ul>
 	</header>
