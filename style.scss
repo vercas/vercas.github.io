@@ -317,7 +317,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .page-link, .page-item.disabled .page-link {
     background-color: #222;
-    border-color: #555;
+    border-color: #444;
 }
 
 .page-link {
@@ -325,7 +325,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .page-item.active .page-link {
-    border-color: #555;
+    border-color: #444;
 }
 
 .page-item.disabled .page-link {
@@ -334,7 +334,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .page-link:hover, .page-link:focus {
     background-color: #444;
-    border-color: #555;
+    border-color: #444;
     color: #ddd;
 }
 
