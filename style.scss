@@ -306,6 +306,12 @@ h4 {
 
 #posts-pagination {
     text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.page-link {
+    background-color: #444;
 }
 
 .comments {
@@ -338,21 +344,6 @@ footer {
     .advertisement {
         margin: 0 auto 0 auto;
     }
-}
-
-.page-prev {
-    width: auto;
-    text-align: left;
-}
-
-.page-list {
-    width: auto;
-    text-align: center;
-}
-
-.page-next {
-    width: auto;
-    text-align: right;
 }
 
 #projects {
