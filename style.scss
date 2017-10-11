@@ -315,6 +315,14 @@ h4 {
     border-color: #555;
 }
 
+.page-link {
+    color: #ddd;
+}
+
+.page-item.disabled .page-link {
+    color: #555;
+}
+
 .comments {
     margin-top: 10px;
 }
