@@ -7,10 +7,13 @@ permalink: /projects/
 
 <div id="projects">
 	{% for proj in site.projects %}
-		<div class="panel panel-default">
-			<div class="panel-heading"><a href="{{ site.baseurl }}{{ proj.url }}">{{ proj.title }}</a></div>
-			<div class="panel-body">
-				<p>{{ proj.description }}</p>
+		<div class="card">
+			<div class="card-body">
+				<h4 class="card-title">
+					<a href="{{ site.baseurl }}{{ proj.url }}">{{ proj.title }}</a>
+				</h4>
+
+				<p class="card-text">{{ proj.description }}</p>
 			</div>
 
 			{% include project_extras.html project=proj %}
