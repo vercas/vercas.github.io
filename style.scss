@@ -220,14 +220,14 @@ h1, h2, h3, h4, h5, h6 {
 
 h1.site-name {
     //margin: 0;
-    margin: 1em 0 15px;
+    margin: 15px 0 15px 0;
     padding: 0;
-    color: $lightGray;
+    color: $lightishGray;
     cursor: pointer;
     font-family: $helveticaNeue;
     font-weight: bold;
     font-size: 28px;
-    line-height: 1.7;
+    //line-height: 1.7;
     letter-spacing: 1px;
 
     @include mobile {
