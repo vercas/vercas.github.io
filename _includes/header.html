@@ -7,7 +7,7 @@
 			<p class="site-description">{{ site.description }}</p>
 		</div>
 
-		<nav class="nav nav-pills">
+		<nav class="nav nav-pills navbar-toggleable-sm">
 			{% for p in site.navpages %}
 				<a href="{{ site.baseurl }}{{ p.url }}"
 					{% if p.url == page.url %}
