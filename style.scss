@@ -240,7 +240,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .masthead > nav {
     float: right;
-    margin-top: 15px; // @TODO: Vertically middle align
+    margin-top: 16px; // @TODO: Vertically middle align
     margin-right: 15px;
     margin-left: 15px;
     padding: 0;
@@ -255,14 +255,14 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     a {
-        margin-left: 20px;
+        margin-left: 10px;
         color: $lightishGray;
         text-align: right;
         font-weight: 300;
         letter-spacing: 1px;
 
         @include mobile {
-            margin: 0 10px;
+            margin: 0 5px;
             //color: $blue;
         }
     }
