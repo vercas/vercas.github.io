@@ -218,14 +218,25 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-.site-name {
-    margin: 0;
+h1.site-name {
+    //margin: 0;
+    margin: 1em 0 15px;
+    padding: 0;
     color: $lightGray;
     cursor: pointer;
     font-family: $helveticaNeue;
-    font-weight: 300;
+    font-weight: bold;
     font-size: 28px;
+    line-height: 1.7;
     letter-spacing: 1px;
+
+    @include mobile {
+        line-height: 1.4;
+    }
+
+    a {
+        color: inherit;
+    }
 }
 
 .site-description {
