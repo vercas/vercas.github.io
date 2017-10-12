@@ -7,18 +7,20 @@
 			<p class="site-description">{{ site.description }}</p>
 		</div>
 
-		<nav class="nav nav-pills navbar-toggleable-sm">
-			{% for p in site.navpages %}
-				<a href="{{ site.baseurl }}{{ p.url }}"
-					{% if p.url == page.url %}
-						class="nav-item nav-link active"
-					{% else %}
-						class="nav-item nav-link"
-					{% endif %}
-				>
-					{{ p.title }}
-				</a>
-			{% endfor %}
+		<nav class="navbar navbar-toggleable-sm">
+			<div class="navbar-nav nav-pills">
+				{% for p in site.navpages %}
+					<a href="{{ site.baseurl }}{{ p.url }}"
+						{% if p.url == page.url %}
+							class="nav-item nav-link active"
+						{% else %}
+							class="nav-item nav-link"
+						{% endif %}
+					>
+						{{ p.title }}
+					</a>
+				{% endfor %}
+			</div>
 		</nav>
 	</header>
 	<div class="header-border">&nbsp;</div>
