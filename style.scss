@@ -241,8 +241,8 @@ h1, h2, h3, h4, h5, h6 {
 .masthead > nav {
     float: right;
     margin-top: 16px; // @TODO: Vertically middle align
-    margin-right: 15px;
-    margin-left: 15px;
+    margin-right: 5px;
+    margin-left: 5px;
     padding: 0;
     font-family: $helveticaNeue;
     font-size: 18px;
@@ -250,12 +250,13 @@ h1, h2, h3, h4, h5, h6 {
     @include mobile {
         float: center;
         margin-top: 5px;
+        margin-bottom: 5px;
         display: block;
         font-size: 16px;
     }
 
     a {
-        margin-left: 10px;
+        margin: 10px;
         color: $lightishGray;
         text-align: right;
         font-weight: 300;
