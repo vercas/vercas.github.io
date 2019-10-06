@@ -38,7 +38,7 @@ body {
 
 .container {
     margin: 0 auto;
-    max-width: 740px;
+    max-width: 1012px;
     padding: 0 10px;
     width: 100%;
 }
@@ -324,6 +324,10 @@ h1.site-name {
         line-height: 1.7;
         margin: 1em 0 15px;
         padding: 0;
+    }
+
+    img {
+        max-width: 100%;
     }
 }
 
