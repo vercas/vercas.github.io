@@ -330,6 +330,10 @@ h1.site-name {
         font-size: 15px;
     }
 
+    h1:first-child {
+        margin-bottom: 0.5em;
+    }
+
     h2 {
         line-height: 1.7;
         margin: 1em 0 15px;
