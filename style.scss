@@ -81,8 +81,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 code {
-    background-color: #202122;
+    background-color: $darkerGray;
     color: $lightGray;
+    border: 1px $darkGray;
 }
 
 // p {
