@@ -327,11 +327,13 @@ h1.site-name {
     }
 
     img {
-        @media screen and (max-width: 900px) { max-width: 80%;  }
+        max-width: 76%;
+
+        @media screen and (max-width: 900px) { max-width: 79%;  }
         @media screen and (max-width: 850px) { max-width: 82%;  }
         @media screen and (max-width: 800px) { max-width: 85%;  }
-        @media screen and (max-width: 760px) { max-width: 87%;  }
-        @media screen and (max-width: 720px) { max-width: 90%;  }
+        @media screen and (max-width: 760px) { max-width: 88%;  }
+        @media screen and (max-width: 720px) { max-width: 91%;  }
         @media screen and (max-width: 680px) { max-width: 94%;  }
         @media screen and (max-width: 640px) { max-width: 97%;  }
         @media screen and (max-width: 600px) { max-width: 100%; }
