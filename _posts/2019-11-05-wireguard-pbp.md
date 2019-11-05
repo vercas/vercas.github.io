@@ -6,7 +6,6 @@ title: WireGuard on Pinebook Pro
 WireGuard is the new and hip VPN protocol that all the cool kids are using these days.  
 It's only natural that I want to use it as well, and the only client I really need is my Pinebook Pro.  
 As of right now (November 1st 2019) when I'm writing this, it's not trivial to make use of the `wireguard-dkms` package on the PBP.  
-
 Luckily, alternatives exist, and I will explain what and how.  
 
 Now, WireGuard does have official implementations in userland, that should be far easier to use, but right now there's some issues...  
