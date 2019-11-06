@@ -95,7 +95,11 @@ p {
 pre.highlight {
     color: #aaa;
     overflow: auto;
-    line-height: 1;
+    padding: 5px;
+
+    code {
+        line-height: 1;
+    }
 }
 
 // p {
