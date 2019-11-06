@@ -84,10 +84,12 @@ hr {
     border-top: 1px solid $darkGray;
 }
 
-code {
-    background-color: $darkerGray;
-    color: $lightGray;
-    border: 1px solid $darkGray;
+p {
+    code {
+        background-color: $darkerGray;
+        color: $lightGray;
+        border: 1px solid $darkGray;
+    }
 }
 
 // p {
