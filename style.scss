@@ -92,7 +92,7 @@ p {
     }
 }
 
-pre {
+pre, pre.highlight, div.highlight > pre.highlight {
     color: #aaa;
     overflow: auto;
 }
