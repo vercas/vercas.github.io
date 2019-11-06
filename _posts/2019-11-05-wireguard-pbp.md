@@ -192,7 +192,7 @@ So I've written two scripts for this. Which are kind of untested, because I'm wr
 `/etc/network/if-up.d/wg0`:
 ```bash
 #!/bin/bash
-if [ "${IFACE}" == "wlan0" && "${ADDRFAM}" == "inet" ]; then
+if [ "${IFACE}" == "wlan0" -a "${ADDRFAM}" == "inet" ]; then
         SSID="$(iwgetid "${IFACE}" -r)"
 
         case "${SSID}" in
@@ -209,7 +209,7 @@ fi
 `/etc/network/if-down.d/wg0`:
 ```bash
 #!/bin/sh
-if [ "${IFACE}" == "wlan0" && "${ADDRFAM}" == "inet" ]; then
+if [ "${IFACE}" == "wlan0" -a "${ADDRFAM}" == "inet" ]; then
         /srv/wireguard/wg0/stop.sh
 fi
 ```
