@@ -92,10 +92,14 @@ p {
     }
 }
 
+div.highlight {
+    padding: 5px;
+}
+
 pre.highlight {
     color: #aaa;
     overflow: auto;
-    padding: 5px;
+    margin: 5px;
 
     code {
         line-height: 1;
