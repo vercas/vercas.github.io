@@ -84,12 +84,10 @@ hr {
     border-top: 1px solid $darkGray;
 }
 
-p {
-    code {
-        background-color: $darkerGray;
-        color: $lightGray;
-        border: 1px solid $darkGray;
-    }
+p code, li code {
+    background-color: $darkerGray;
+    color: $lightGray;
+    border: 1px solid $darkGray;
 }
 
 div.highlight {
