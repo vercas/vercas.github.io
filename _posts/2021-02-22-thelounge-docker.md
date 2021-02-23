@@ -15,7 +15,7 @@ In this post I show how I've overcome this limitation, and explain how and why.
 Allow me to start with a rant.  
 Quassel is incredible. A lot of features packed into one application.  
 One outdated, slow, and bloated application.  
-So many features yes no automatic cleaning of message backlogs.  
+So many features yet no automatic cleaning of message backlogs.  
 After years of usage, it renders some operations so incredibly slow, that doing them blocks the daemon for so long, the client loses connection to the daemon, and the daemon loses connection to every IRC server.  
 It literally hasn't been updated since I've started using it, and it's by no means stable or bug-free.  
 
