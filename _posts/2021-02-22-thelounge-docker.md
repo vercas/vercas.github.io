@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Runningg The Lounge Torified with Docker
+title: Running The Lounge Torified with Docker
 ---
 
 For half a decade I've been using a headless Quassel Core as my IRC client, but its shortcomings have become too much to bear.  
